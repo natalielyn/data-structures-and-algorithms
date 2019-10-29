@@ -90,7 +90,12 @@ This anonymous function should accept up to three arguments: the element, the in
 ------------------------------------------------------------------------------------------------ */
 
 const removeWithAnon = (arr) => {
-  // Solution code here...
+  arr.forEach ((element) => {
+    if (element % 3 === 2) {
+      arr.pop();
+    }
+  })
+  return arr;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -111,7 +116,13 @@ This function should use forEach to populate your grocery list based on the stor
 ------------------------------------------------------------------------------------------------ */
 
 const createList = (availableItems) => {
-  // Solution code here...
+  let groceryList = [];
+  availableItems.forEach(function(element) {
+    if(element.available) {
+      groceryList.push(element.name);
+    }
+  });
+  return groceryList;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -129,8 +140,20 @@ Return the resulting output array.
 ------------------------------------------------------------------------------------------------ */
 
 const fizzbuzz = (arr) => {
-  // Solution code here...
-};
+  const outputArr = [];
+  arr.forEach (function(element) {
+    if (element % 3 === 0 && element % 5 === 0) {
+      outputArr.push('Fizz Buzz');
+     } else if (element % 5 === 0) {
+        outputArr.push('Buzz');
+      } else if (element % 3 === 0) {
+        outputArr.push('Fizz');
+       } else {
+          outputArr.push(element);
+        }
+      });
+      return outputArr;
+ };
 
 /* ------------------------------------------------------------------------------------------------
 TESTS
@@ -141,7 +164,7 @@ DO NOT CHANGE any of the below code.
 
 Run your tests from the console: jest challenges-01.test.js
 
------------------------------------------------------------------------------------------------- */
+---------------------------,--------------------------------------------------------------------- */
 
 describe('Testing challenge 1', () => {
   test('It should return the message with all uppercase characters', () => {
