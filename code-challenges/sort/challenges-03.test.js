@@ -136,8 +136,16 @@ If two people have the same full name, the younger one should come first. Do not
 ------------------------------------------------------------------------------------------------ */
 
 const sortPeopleBetter = (arr) => {
-  // Solution code here...
+  return arr.sort((a, b) => {
+    if(a.lastName === b.lastName){
+      if(a.firstName === b.firstName) return a.age - b.age;
+      return a.firstName.localeCompare(b.firstName);
+    }
+    return a.lastName.localeCompare(b.lastName);
+  });
 };
+//Solution barrowed from David Vloedman
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 9 - Stretch Goal
