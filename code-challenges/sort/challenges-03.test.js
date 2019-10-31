@@ -118,8 +118,12 @@ const people = [
 ];
 
 const sortPeople = (arr) => {
-  // Solution code here...
+  arr.sort( (a , b) => {
+   return a.lastName > b.lastName ? 1:-1;
+  });
+return arr;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
