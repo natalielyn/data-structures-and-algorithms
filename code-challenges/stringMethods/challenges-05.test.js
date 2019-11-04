@@ -96,7 +96,10 @@ You may also use other string or array methods.
 
 const splitFoods = (recipe) => {
   let result = [];
-  // Solution code here...
+  recipe.ingredients.forEach(listItem => {
+    let items = listItem.split(' ').splice(2).join(' ');
+    result.push(items);
+  });
   return result;
 };
 
