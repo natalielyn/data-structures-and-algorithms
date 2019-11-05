@@ -76,6 +76,10 @@ const getHouses = (arr) => {
   return houses;
 };
 
+//for (let property in arr) {
+  //houses.push([property].house);
+
+
 /*------------------------------------------------------------------------------------------------
 CHALLENGE 3
 
@@ -132,18 +136,16 @@ Write a function named totalCharacters that takes in an array and returns the nu
 ------------------------------------------------------------------------------------------------ */
 
 const totalCharacters = (arr) => {
-  let characters = [];
-  arr.forEach(person =>
-    characters.push(person.name));
-    if(person.spouse !== null) {
-      characters.push(person.spouse);
-    }
-      if (person.children.length > 0) {
-        person.children.forEach(person =>
-          characters.push(person));
-    }
-    return characters.length;
+  //Credit to Calvin from Code Review
+  let count = 0;
+  Object.values(arr).forEach(character => {
+    count ++;
+    if (character.spouse) count ++;
+    count += character.children.length;
+  });
+  return count;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6 - Stretch Goal
@@ -156,8 +158,18 @@ For example: [{ house: 'Stark', members: 7 }, { house: 'Arryn', members: 3 }, ..
 ------------------------------------------------------------------------------------------------ */
 
 const houseSize = (arr) => {
+  //Credit to Calvin from Code Review
   const sizes = [];
-  // Solution code here...
+  Object.values(arr).forEach( person => {
+    let sum = 1;
+
+    if (person.spouse) sum++;
+    person.children.forEach( () => sum++);
+    sizes.push( {
+      house: person.house,
+      members: sum
+    });
+  });
   return sizes;
 };
 
