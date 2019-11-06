@@ -57,7 +57,11 @@ For example: charCode(['h','i']) returns [104, 105].
 ------------------------------------------------------------------------------------------------ */
 
 const charCode = (arr) => {
-  // Solution code here...
+  let newArray = [];
+  arr.map( index =>  {
+    newArray.push(index.charCodeAt());
+  }); 
+  return newArray;
 };
 
 /* ------------------------------------------------------------------------------------------------
