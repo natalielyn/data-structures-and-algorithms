@@ -33,7 +33,13 @@ For example, [[1, 2, 3, 4, 5], [6, 7, 2, 4, 5, 7], [9, 2, 3, 6,]] returns 66.
 ------------------------------------------------------------------------------------------------ */
 
 const totalSum = (input) => {
-  // Solution code here...
+  let numberSum = 0;
+  input.map ( value => {
+    return value.map ( mapValue => {
+      numberSum += mapValue;
+    })
+  })
+  return numberSum;
 };
 
 /* ------------------------------------------------------------------------------------------------
