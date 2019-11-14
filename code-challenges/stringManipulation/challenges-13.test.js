@@ -27,7 +27,9 @@ For example, ['this is great :)', 'wow', 'whyyyyyy :(', ':)))))'] returns ['this
 const findHappiness = (arr) => {
   let happy = [];
   arr.forEach(smiley => {
-    happy.push(smiley.includes(':)'));
+    if(smiley.includes(':)')) {
+      happy.push(smiley);
+    }
   })
   return happy;
 };
