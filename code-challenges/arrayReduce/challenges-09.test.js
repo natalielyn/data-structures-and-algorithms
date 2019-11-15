@@ -157,8 +157,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  const total = arr.reduce( (accumulator,value) => {
+    return (accumulator + value);
+  });
+  return total / arr.length;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
