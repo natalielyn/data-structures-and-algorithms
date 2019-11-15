@@ -84,7 +84,7 @@ let starWarsData = [{
   birth_year: '27BBY',
   gender: 'n/a'
 }];
-
+//solution from Holly Davis
 let biggerThanLuke = (arr) => {
   let charMass = [];
   arr.forEach(char => {
