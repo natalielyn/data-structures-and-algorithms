@@ -86,8 +86,15 @@ let starWarsData = [{
 }];
 
 let biggerThanLuke = (arr) => {
-  // will come back to this
+  let charMass = [];
+  arr.forEach(char => {
+    if (char.mass > 77) {
+      charMass.push(char.name);
+    }
+  })
+  return charMass.join(' - ');
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 3
