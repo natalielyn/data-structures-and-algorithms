@@ -138,7 +138,14 @@ const characters = [
 ];
 
 const countNumberOfChildren = (arr) => {
-  let children =
+  return arr.reduce((accumalator, value) => {
+    if(value.children){
+      return accumalator + value.children.length;
+    }
+    else{
+      return accumalator;
+    }
+  }, 0);
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -150,8 +157,12 @@ Hint: The accumulator should begin as { count: 0, sum: 0 }
 ------------------------------------------------------------------------------------------------ */
 
 const calculateAverage = (arr) => {
-  // Solution code here...
+  const total = arr.reduce( (accumulator,value) => {
+    return (accumulator + value);
+  });
+  return total / arr.length;
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 6
@@ -171,7 +182,15 @@ const isPrime = (value) => {
 };
 
 const countPrimeNumbers = (arr) => {
-  // Solution code here...
+  const primeNumbers = arr.reduce((accumulator, value) => {
+    if (isPrime(value)) {
+      accumulator++
+      return accumulator;
+    } else {
+      return accumulator;
+    }
+  }, 0);
+  return primeNumbers;
 };
 
 /* ------------------------------------------------------------------------------------------------
