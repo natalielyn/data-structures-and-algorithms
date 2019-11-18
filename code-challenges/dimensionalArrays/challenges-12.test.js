@@ -113,7 +113,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = 0; j < numbers[i].length; j++) {
+      product = product * numbers[i][j];
+    }
+  }
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -133,7 +139,13 @@ const weeklyTemperatures = [
 ];
 
 const averageDailyTemperature = (weather) => {
-  // Solution code here...
+  let tempAverage = 0;
+   weather.forEach(week => {
+     week.forEach(day => {
+     tempAverage += day
+    })
+  })
+  return tempAverage / 28;
 };
 
 /* ------------------------------------------------------------------------------------------------
@@ -154,8 +166,27 @@ let lowestWeeklyTemperatureData = [
 ];
 
 const lowestWeeklyAverage = (weather) => {
-  // Solution code here...
+  let weeklyAverage;
+  let lowestAverage = [];
+  weather.forEach(week => {
+    weeklyAverage = 0;
+    week.forEach(day => {
+      weeklyAverage += day;
+    })
+    lowestAverage.push(weeklyAverage/7);
+  })
+  lowestAverage.sort((a, b) => {
+    if(a < b) {
+      return -1;
+    } else if (a > b){
+      return 1;
+    } else {
+      return 0;
+    }
+  });
+  return lowestAverage[0];
 };
+
 
 /* ------------------------------------------------------------------------------------------------
 CHALLENGE 8
@@ -170,17 +201,18 @@ For example, excel('1,1,1\n4,4,4\n9,9,9') returns [3, 12, 27].
 ------------------------------------------------------------------------------------------------ */
 
 const excel = (str) => {
-  let sums = [];
-  let rows = str.split('\n')
+  const sums = [];
+  const rows = str.split('\n');
   rows.forEach( row => {
     let sum = 0;
-    let col = row.split(',');
-    col.forEach(col => {
+    const cols = row.split(',');
+    cols.forEach( col => {
       const num = parseInt(col);
       sum += num;
     })
     sums.push(sum);
   })
+  return sums;
 };
 
 /* ------------------------------------------------------------------------------------------------
