@@ -113,7 +113,13 @@ For example, the following input returns a product of 720: [[1,2], [3,4], [5,6]]
 ------------------------------------------------------------------------------------------------ */
 
 const calculateProduct = (numbers) => {
-  // Solution code here...
+  let product = 1;
+  for (let i=0; i < numbers.length; i++) {
+    for (let j=0; j < numbers[i].length; j++) {
+      product = product * numbers[i][j];
+    }
+  }
+  return product;
 };
 
 /* ------------------------------------------------------------------------------------------------
