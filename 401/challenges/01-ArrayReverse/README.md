@@ -12,3 +12,4 @@ The approach we took was to declare a function that takes in an array as a argum
 
 ## Solution
 ![whiteboard](../assets/arrayReverseWB.jpg)
+
