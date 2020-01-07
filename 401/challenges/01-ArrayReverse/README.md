@@ -11,4 +11,4 @@ The approach we took was to declare a function that takes in an array as a argum
 [PR link](https://github.com/natalielyn/data-structures-and-algorithms/pull/20)
 
 ## Solution
-![whiteboard](./assets/arrayReverseWB.jpg)
+![whiteboard](../assets/arrayReverseWB.jpg)
