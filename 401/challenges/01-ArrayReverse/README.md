@@ -11,4 +11,4 @@ The approach we took was to declare a function that takes in an array as a argum
 submission PR link
 
 ## Solution
-![whiteboard](./assets/arrayReverseWB.jpg)
+![whiteboard](../assets/arrayReverseWB.jpg)
