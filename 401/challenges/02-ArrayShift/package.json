@@ -1,0 +1,16 @@
+{
+  "name": "02-arrayshift",
+  "version": "1.0.0",
+  "description": "Insert and shift an array in middle at index",
+  "main": "array-shift.js",
+  "dependencies": {
+    "jest": "^24.9.0"
+  },
+  "devDependencies": {},
+  "scripts": {
+    "lint": "eslint '**/*.js'",
+    "test": "jest --verbose --coverage"
+  },
+  "author": "",
+  "license": "ISC"
+}
